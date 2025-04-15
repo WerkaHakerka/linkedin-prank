@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Oops!</title>
+  <meta http-equiv="refresh" content="9;url=https://www.linkedin.com/in/weronika-krzywanska/">
+  <style>
+    body {
+      background-color: black;
+      color: limegreen;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .terminal {
+      background-color: #111;
+      padding: 20px;
+      border: 1px solid #0f0;
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+      white-space: pre-wrap;
+      margin-bottom: 30px;
+    }
+    .message {
+      font-size: 1.5rem;
+      display: none;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+    #msg1 { animation-delay: 0s; }
+    #msg2 { animation-delay: 3s; }
+    #msg3 { animation-delay: 6s; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; display: block; }
+      to { opacity: 1; display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<audio autoplay>
+  <source src="https://www.myinstants.com/media/sounds/windows-xp-error.mp3" type="audio/mpeg">
+</audio>
+
+<div class="terminal" id="terminal"></div>
+
+<div id="msg1" class="message">💀 You’ve been hacked!</div>
+<div id="msg2" class="message">😄 ...Just kidding</div>
+<div id="msg3" class="message">🔗 Redirecting to my LinkedIn profile...</div>
+
+<script>
+  const terminalLines = [
+    "Accessing system...",
+    "Injecting payload...",
+    "Bypassing firewall...",
+    "Establishing connection...",
+    "System compromised."
+  ];
+  let i = 0;
+  function typeTerminal() {
+    if (i < terminalLines.length) {
+      document.getElementById("terminal").innerHTML += terminalLines[i] + "\n";
+      i++;
+      setTimeout(typeTerminal, 600);
+    }
+  }
+  typeTerminal();
+
+  setTimeout(() => {
+    document.getElementById("msg1").style.display = 'block';
+  }, 0);
+
+  setTimeout(() => {
+    document.getElementById("msg2").style.display = 'block';
+  }, 3000);
+
+  setTimeout(() => {
+    document.getElementById("msg3").style.display = 'block';
+  }, 6000);
+</script>
+
+</body>
+</html>
